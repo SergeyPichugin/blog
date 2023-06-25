@@ -1,0 +1,13 @@
+---
+import GeneralLayout from '../layouts/general.astro'
+import { Paragraph } from '../components/Paragraph'
+---
+<GeneralLayout title="storybook" description="storybook desc">
+    <a href="/">go back</a>
+    <hr>
+    <div>Paragraph sizes:</div>
+    <Paragraph size='s'>Lorem, ipsum dolor. paragraph size s</Paragraph>
+    <Paragraph size='m'>Lorem, ipsum dolor. paragraph size m</Paragraph>
+    <Paragraph size='l'>Lorem, ipsum dolor. paragraph size l</Paragraph>
+    <Paragraph size='xl'>Lorem, ipsum dolor. paragraph size xl</Paragraph>
+</GeneralLayout>

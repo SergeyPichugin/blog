@@ -1,0 +1,54 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+type ButtonPropsAstro = HTMLAttributes<'button'>
+interface ButtonProps extends ButtonPropsAstro{
+    href: string;
+    target?: boolean;
+}
+
+const { href, target, ...attrs } = Astro.props as ButtonProps
+
+---
+{
+    href ? 
+    target ? 
+    <a href={href} target="_blank">
+        <button class="Button" {...attrs}>
+            <slot/>
+        </button>
+    </a>
+    : 
+    <a href={href}>
+        <button class="Button" {...attrs}>
+            <slot/>
+        </button>
+    </a> 
+    : 
+    <button class="Button" {...attrs}>
+        <slot/>
+    </button> 
+}
+
+<style>
+    .Button{
+        background: var(--color);
+        color: var(--color-inverted);
+        padding: 10px 20px;
+        border: 1px solid var(--color-inverted);
+
+        transition: all .1s ease-in-out;
+
+        cursor: pointer;        
+    }
+    .Button:hover{
+        background: var(--color-inverted);
+        color: var(--color);
+        }
+    .Button:disabled{
+        background: var(--color);
+        color: var(--color-inverted);
+        opacity: .6;
+        filter: grayscale(1);
+        cursor: no-drop;
+    }
+</style>

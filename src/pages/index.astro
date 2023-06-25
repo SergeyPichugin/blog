@@ -1,0 +1,18 @@
+---
+import '../styles/global.scss'
+import GeneralLayout from '../layouts/general.astro'
+import Button from '../components/Button/Button.astro'
+---
+<GeneralLayout title="Главная страница" description="Описание главной страницы">
+	<nav>
+		<Button target={false} href="/storybook">StoryBook</Button>
+	</nav>
+	<hr>
+	<h1 style="color: var(--color)">Blog Web Dev</h1>
+	<Button>123</Button> <br>
+	<Button target={false} href="/test">Link test</Button> <br>
+	<Button target={true} href="https://google.com/">Link test</Button> <br>
+	<Button target={true} href="https://google.com/" disabled>Disabled Button Link</Button> <br>
+	<Button href="/test">innre link</Button> <br>
+	<Button data-confetti-button>Change Theme</Button>
+</GeneralLayout>

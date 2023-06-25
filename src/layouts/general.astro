@@ -1,0 +1,35 @@
+---
+import HeadLayout from './head.astro'
+export interface PropsHeadLayout{
+    title: string;
+    description: string;
+}
+const { title, description } = Astro.props as PropsHeadLayout;
+---
+
+<html lang="en" data-theme>
+	<HeadLayout title={title} description={description}/>
+	<body>
+		<slot/>
+	</body> 
+</html>
+<script>
+	const button = document.querySelector('[data-confetti-button]')!;
+
+	document.addEventListener('DOMContentLoaded', () => {
+		document.getElementsByTagName('html')[0].dataset.theme = localStorage.getItem('theme')!
+	})
+
+	button.addEventListener('click', () => {
+		
+		
+		if(localStorage.getItem('theme') === 'dark') {
+			localStorage.setItem('theme', 'light')
+			document.querySelector('html')!.dataset.theme = localStorage.getItem('theme')!
+		} else {
+			localStorage.setItem('theme', 'dark')
+			document.querySelector('html')!.dataset.theme = localStorage.getItem('theme')!
+		}
+		
+	});
+</script>

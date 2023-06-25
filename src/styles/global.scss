@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --color: #f9b69e;
+    --color-inverted: #000000;
+    --font-family: 'Geologica', sans-serif;
+    --font-default-weight: normal;
+
+    --font-s: 14px;
+    --font-lh-s: 12px;
+
+    --font-m: 16px;
+    --font-lh-m: 12px;
+
+    --font-l: 18px;
+    --font-lh-l: 12px;
+
+    --font-xl: 20px;
+    --font-lh-xl: 12px;
+}
+
+html[data-theme="light"]{
+    --color: #000000;
+    --color-inverted: #f9b69e;
+    
+    --background: #f9b69e;
+}
+html[data-theme="dark"]{
+    --color: #f9b69e;
+    --color-inverted: #000000;
+    
+    --background: #000000;
+}
+
+body{
+    font: var(--font-default-weight) var(--font-s) / var(--font-lh-s) var(--font-family);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: var(--background);
+    color: var(--color);
+}
+
+a{
+    color: var(--color);
+}
